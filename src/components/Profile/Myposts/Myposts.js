@@ -7,10 +7,11 @@ const MyPosts = () => {
 
         <div>
             <p className={styles.head}>MY POSTS</p>
+            <textarea placeholder="insert new post"></textarea>
             <button className={styles.button}>add post</button>
             <button className={styles.button}>delete post</button>
-            <SinglePost />
-            <SinglePost/>
+            <SinglePost message="Hello my friend"/>
+            <SinglePost message="Let's go fishing"/>
            
         </div>
     )

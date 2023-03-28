@@ -1,6 +1,15 @@
-.nav{
+.nav {
     grid-area: n;
     background-color: burlywood;
-  }
-  .item {color: white;}
-  .active{color: red;}
+    padding: 20px;
+}
+
+.item  {
+    color: white;
+    text-decoration: none;
+}
+
+.active {
+    color: red;
+}
+a {text-decoration: none}
