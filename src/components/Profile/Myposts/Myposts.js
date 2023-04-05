@@ -1,20 +1,12 @@
 import React from "react"
 import styles from "./Myposts.module.css"
 import SinglePost from "./Singlepost/Singlepost"
+import {getMouseEventProps} from "@testing-library/user-event/dist/keyboard/getEventProps";
 
 const MyPosts = (props) => {
 
-    let posts=[
-        {id:1,message:"Let's start fishing",likesCount:10},
-        {id:2,message:"I love tennis",likesCount:1},
-        {id:3,message:"Hello world",likesCount:2},
-        {id:4,message:"Hello world",likesCount:2},
-        {id:5,message:"Hello world",likesCount:2},
-        {id:6,message:"Hello world",likesCount:2},
-        {id:7,message:"Hello world",likesCount:2}
-    ]
 
-    let postsElements=posts.map((post)=>{
+    let postsElements=props.posts.map((post)=>{
         return(
             <SinglePost key={post.id} message={post.message} likes={post.likesCount}/>
         )
