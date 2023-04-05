@@ -12,8 +12,6 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 const App = (props) => {
 
 
-
-
     return (
 
         <BrowserRouter>
@@ -26,8 +24,8 @@ const App = (props) => {
 
                     <Routes>
 
-                        <Route path="/dialogs" element={<Dialogs dialogs={props.dialog} messages={props.messages} />}/>
-                        <Route path="/profile" element={<Profile posts={props.posts}/>}/>
+                        <Route path="/dialogs" element={<Dialogs state={props.state.dialogPage} />}/>
+                        <Route path="/profile" element={<Profile state={props.state.profilePage}/>}/>
                         <Route path="/news" element={<News/>}/>
                         <Route path="/music" element={<Music/>}/>
                         <Route path="/settings" element={<Settings/>}/>
