@@ -32,10 +32,6 @@ const App = (props) => {
 
                     </Routes>
 
-                    {/*<Dialogs/>*/}
-                    {/*<Profile/>*/}
-
-
                 </div>
 
             </div>

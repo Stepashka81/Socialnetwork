@@ -6,27 +6,35 @@ import {getMouseEventProps} from "@testing-library/user-event/dist/keyboard/getE
 const MyPosts = (props) => {
 
 
-    let postsElements=props.posts.map((post)=>{
-        return(
+    let postsElements = props.posts.map((post) => {
+        return (
             <SinglePost key={post.id} message={post.message} likes={post.likesCount}/>
         )
     })
+
+    let newPostElement = React.createRef();
+
+
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        alert(text)
+    }
 
     return (
 
         <div className={styles.postBlock}>
             <h3 className={styles.head}>MY POSTS</h3>
-            <form>
-            <textarea placeholder="insert new post"></textarea>
 
-        <div>
-            <button className={styles.button}>add post</button>
-            <button className={styles.button}>delete post</button>
-        </div>
-            </form>
+            <textarea ref={newPostElement} placeholder="insert new post"></textarea>
+
+            <div>
+                <button onClick={addPost} className={styles.button}>add post</button>
+                <button className={styles.button}>delete post</button>
+            </div>
+
 
             {postsElements}
-           
+
         </div>
     )
 }

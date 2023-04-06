@@ -1,1 +1,15 @@
-.dialog{}
+.dialog {
+}
+
+.messagesBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.messagesBox > div {
+    width: 80px;
+    height: 40px;
+}
+
