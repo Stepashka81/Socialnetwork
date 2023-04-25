@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./Myposts.module.css"
 import SinglePost from "./Singlepost/Singlepost"
-import {getMouseEventProps} from "@testing-library/user-event/dist/keyboard/getEventProps";
+// import {getMouseEventProps} from "@testing-library/user-event/dist/keyboard/getEventProps";
 
 const MyPosts = (props) => {
 
@@ -15,9 +15,9 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
 
 
-    let addPost = () => {
+    let addNewPost = () => {
         let text = newPostElement.current.value;
-        alert(text)
+        props.addPost(text)
     }
 
     return (
@@ -28,7 +28,7 @@ const MyPosts = (props) => {
             <textarea ref={newPostElement} placeholder="insert new post"></textarea>
 
             <div>
-                <button onClick={addPost} className={styles.button}>add post</button>
+                <button onClick={addNewPost} className={styles.button}>add post</button>
                 <button className={styles.button}>delete post</button>
             </div>
 

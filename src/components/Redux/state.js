@@ -14,7 +14,7 @@ export let state = {
 
     },
 
-    dialogPage:
+    dialogsPage:
         {
 
             dialogs: [
@@ -32,8 +32,23 @@ export let state = {
                 {id: 4, message: 'Good bye'},
                 {id: 5, message: 'OK'}
             ]
-        }
+        },
+    sidebar:{}
+
 }
+
+export let addPost=(postMessage)=>{
+
+    let newPost={
+        id:8,
+        message:postMessage,
+        likesCount:0
+    };
+    state.profilePage.posts.push(newPost);
+}
+
+
+
 
 
 
