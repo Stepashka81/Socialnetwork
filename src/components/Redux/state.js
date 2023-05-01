@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../../Render";
+
 export let state = {
 
     profilePage: {
@@ -11,6 +13,7 @@ export let state = {
             {id: 7, message: "Hello world", likesCount: 2}
         ],
 
+        newPostText:'Insert new post'
 
     },
 
@@ -36,16 +39,37 @@ export let state = {
     sidebar:{}
 
 }
+window.state=state;
 
-export let addPost=(postMessage)=>{
+export let addPost=()=>{
+
+    let newId=state.profilePage.posts[state.profilePage.posts.length-1].id+1;
 
     let newPost={
-        id:8,
-        message:postMessage,
+        id:newId,
+        message:state.profilePage.newPostText,
         likesCount:0
     };
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText='';
+
+     rerenderEntireTree(state);
+
+     console.log(state.profilePage.posts)
 }
+
+export let updateNewPostText=(newText)=>{
+
+    state.profilePage.newPostText=newText;
+
+    rerenderEntireTree(state);
+
+}
+
+
+
+
+ export default state;
 
 
 

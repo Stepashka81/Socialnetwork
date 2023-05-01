@@ -6,7 +6,7 @@ import SinglePost from "./Singlepost/Singlepost"
 const MyPosts = (props) => {
 
 
-    let postsElements = props.posts.map((post) => {
+     let postsElements = props.posts.map((post) => {
         return (
             <SinglePost key={post.id} message={post.message} likes={post.likesCount}/>
         )
@@ -16,16 +16,25 @@ const MyPosts = (props) => {
 
 
     let addNewPost = () => {
-        let text = newPostElement.current.value;
-        props.addPost(text)
+    //    let text = newPostElement.current.value;
+        props.addPost();
+
+
     }
+
+    let onPostChange=()=>{
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
+
+    };
+
 
     return (
 
         <div className={styles.postBlock}>
             <h3 className={styles.head}>MY POSTS</h3>
 
-            <textarea ref={newPostElement} placeholder="insert new post"></textarea>
+            <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
 
             <div>
                 <button onClick={addNewPost} className={styles.button}>add post</button>
